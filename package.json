@@ -1,5 +1,5 @@
 {
-  "name": "loc8r",
+  "name": "oddsmatch_yuki_hoi",
   "version": "0.0.0",
   "private": true,
   "scripts": {
@@ -7,7 +7,7 @@
   },
   "dependencies": {
     "bcrypt": "^6.0.0",
-    "bcryptjs": "^3.0.2",
+    "bcryptjs": "^3.0.3",
     "bootstrap": "^3.3.7",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
@@ -19,7 +19,8 @@
     "mongodb": "^6.20.0",
     "mongoose": "^8.19.1",
     "morgan": "~1.9.1",
-    "pug": "2.0.0-beta11"
+    "pug": "2.0.0-beta11",
+    "request": "^2.88.2"
   },
   "devDependencies": {
     "nodemon": "^3.1.10"

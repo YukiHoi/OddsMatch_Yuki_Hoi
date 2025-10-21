@@ -4,35 +4,36 @@ block content
   .container
     .row
       .span5
+        if user
+          .welcome-message
+            h4
+              | Welcome, 
+              strong #{user.firstName}
         h1= pageHeader.title
         h3 #{pageHeader.time} - #{pageHeader.distance} - #{pageHeader.type}
         if sidebar
           p= sidebar
 
-    each location in locations
-      .row
-        .span5
-          h3= location.horse
-          table.table.table-striped.table-condensed
-            thead
-              tr
-                th Market
-                th= location.bookmakers[0].boyle
-                th= location.bookmakers[1].paddy
-                th= location.bookmakers[2].bet365
-                th Best
-            tbody
-              tr
-                td= location.back
-                td= location.bookmakers[0].odds.back
-                td= location.bookmakers[1].odds.back
-                td= location.bookmakers[2].odds.back
-                td
-                  span.label.label-success= location.best.back
-              tr
-                td= location.eachWay
-                td= location.bookmakers[0].odds.eachWay
-                td= location.bookmakers[1].odds.eachWay
-                td= location.bookmakers[2].odds.eachWay
-                td
-                  span.label.label-success= location.best.eachWay
+    if locations && locations.length
+      each race in locations
+        each horse, index in race.horses
+          .row
+            .span5
+              h3 #{index + 1} #{horse.name}
+              table.table.table-striped.table-condensed
+                thead
+                  tr
+                    th Market
+                    th Boylesports
+                    th Paddy Power
+                    th Bet365
+                    th Best
+                tbody
+                  each market in horse.markets
+                    tr
+                      td= market.type
+                      td= (market.odds && (market.odds['Boylesports'] || market.odds.Boylesports)) || '-'
+                      td= (market.odds && (market.odds['Paddy Power'] || market.odds['PaddyPower'] || market.odds.PaddyPower)) || '-'
+                      td= (market.odds && (market.odds['Bet365'] || market.odds.Bet365)) || '-'
+                      td
+                        span.label.label-success= market.best || '-'
