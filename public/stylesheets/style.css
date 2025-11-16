@@ -231,6 +231,14 @@ a{
         border-bottom-color: #eef2f5;
     }
 
+/* Make the Best price badge green */
+.badge-success {
+    background-color: #28a745 !important;  
+    color: #fff !important;                
+    border-radius: 999px;
+    padding: 5px 10px;
+    font-weight: 800;
+}
 
 
 

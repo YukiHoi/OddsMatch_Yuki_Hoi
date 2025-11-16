@@ -14,26 +14,14 @@ block content
         if sidebar
           p= sidebar
 
-    if locations && locations.length
-      each race in locations
-        each horse, index in race.horses
-          .row
-            .span5
-              h3 #{index + 1} #{horse.name}
-              table.table.table-striped.table-condensed
-                thead
-                  tr
-                    th Market
-                    th Boylesports
-                    th Paddy Power
-                    th Bet365
-                    th Best
-                tbody
-                  each market in horse.markets
-                    tr
-                      td= market.type
-                      td= (market.odds && (market.odds['Boylesports'] || market.odds.Boylesports)) || '-'
-                      td= (market.odds && (market.odds['Paddy Power'] || market.odds['PaddyPower'] || market.odds.PaddyPower)) || '-'
-                      td= (market.odds && (market.odds['Bet365'] || market.odds.Bet365)) || '-'
-                      td
-                        span.label.label-success= market.best || '-'
+    // Angular component will render the odds list
+    .row
+      .span12
+        app-home-list Loading…
+
+        script.
+        window.currentUserName = !{JSON.stringify(user ? user.firstName : 'Guest')};
+
+block scripts
+  script(type='module', src='/build/polyfills-5CFQRCPP.js')
+  script(type='module', src='/build/main-7KLM6ZOR.js')

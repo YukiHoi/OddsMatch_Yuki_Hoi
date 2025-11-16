@@ -5,6 +5,7 @@ const router = express.Router();
 const races = require('../controllers/races');
 const users = require('../controllers/users');
 
+// Health check endpoint
 router.get('/', (req, res) => {
   res.status(200).json({ status: 'ok', service: 'OddsMatch API is running' });
 });
