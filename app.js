@@ -23,7 +23,7 @@ app.set('trust proxy', 1);
 
 // Passport Middleware
 app.use(session({
-  secret: process.env.SESSION_SECRET || 'change-me',
+  secret: process.env.SESSION_SECRET || 'your_secret_key',
   resave: false,
   saveUninitialized: false,
   cookie: {
