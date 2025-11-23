@@ -1,6 +1,6 @@
 // app_api/controllers/users.js
 const mongoose = require('mongoose');
-const bcrypt = require('bcryptjs'); // or 'bcrypt'
+const bcrypt = require('bcryptjs'); // password hashing
 const User = mongoose.model('User');
 
 // POST /api/users

@@ -12,7 +12,7 @@ const apiOptions = {
 /* Render home page */
 const _renderHomepage = (req, res, responseBody) => {
   const race = responseBody && responseBody.length ? responseBody[0] : null;
-  const user = req.session.user || null;
+  const user = req.user || null;
 
   res.render('index', {
     title: 'Race Details',

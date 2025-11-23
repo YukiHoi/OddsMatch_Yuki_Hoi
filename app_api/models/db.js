@@ -14,6 +14,7 @@ mongoose.connect(dbURI)
 
 require('./locations');
 require('./others');
+require('../../app_server/models/account');
 
 console.log('Models registered:', mongoose.modelNames());
 module.exports = mongoose;

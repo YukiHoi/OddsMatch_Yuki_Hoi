@@ -3,8 +3,10 @@ extends layout
 block content
   .main-login.main-center
     h5 Please log in to continue
-    if error
-      .alert.alert-danger(role="alert") #{error}
+    if error && error.length > 0
+      .alert.alert-danger(role="alert")
+        each e in error 
+          p= e 
     if success
       .alert.alert-success(role="alert") #{success}
 

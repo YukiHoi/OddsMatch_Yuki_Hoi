@@ -3,7 +3,7 @@ const express = require('express');
 const router = express.Router();
 
 const races = require('../controllers/races');
-const users = require('../controllers/users');
+//const users = require('../controllers/users');
 
 // Health check endpoint
 router.get('/', (req, res) => {
@@ -15,7 +15,7 @@ router.get('/races', races.raceList);
 router.get('/races/:raceId', races.raceDetails);
 
 // Users
-router.post('/users', users.userCreate);
-router.post('/users/login', users.userLogIn);
+//router.post('/users', users.userCreate);
+//router.post('/users/login', users.userLogIn);
 
 module.exports = router;
